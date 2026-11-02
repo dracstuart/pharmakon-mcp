@@ -1,6 +1,6 @@
 # 0009. Profiles are files; user interfaces edit them
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-10-31
 
 ## Context
