@@ -46,4 +46,5 @@ molecule data (small molecules, peptides, conjugates such as ADCs). Owner: Andre
 ## Workflow
 - Branch from `main`, open a PR, CI must pass before merge. No direct pushes to `main`.
 - Commit messages: plain imperative sentences ("Add PubChem client"), no prefixes.
+- No `Co-Authored-By` trailers or "Generated with Claude Code" lines in commits or PRs.
 - All packages share one version number (lockstep). Update CHANGELOG.md in each PR.
