@@ -5,9 +5,12 @@
 
 ## Context
 Different groups in a pharmaceutical organization report the same property in
-different units. Within a group the convention is usually consistent, often set by
-the instrument software they use; between groups it differs. Sources also report in
-mixed units (solubility as mg/mL, g/L or µM; temperatures in °C or °F).
+different units. Within a group the convention is usually consistent; between groups
+it often differs. Conventions come from many places — for example the norms of a
+scientific discipline, the instrument software a group uses, regulatory or reporting
+requirements, or simply long-standing habit — so pharmakon must not assume any one
+reason or any one "correct" unit. Sources also report in mixed units (solubility as
+mg/mL, g/L or µM; temperatures in °C or °F).
 
 It is not yet known whether groups also use the same property *name* for different
 measurements (for example kinetic vs thermodynamic solubility). The design must leave
