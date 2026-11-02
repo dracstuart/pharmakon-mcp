@@ -1,6 +1,6 @@
 # 0008. Per-property source priority in group profiles
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-10-31
 
 ## Context

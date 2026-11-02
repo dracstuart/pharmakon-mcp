@@ -1,6 +1,6 @@
 # 0007. Pluggable data sources
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-10-31
 
 ## Context

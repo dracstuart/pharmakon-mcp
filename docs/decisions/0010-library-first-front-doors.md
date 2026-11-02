@@ -1,6 +1,6 @@
 # 0010. Library-first architecture with several front doors
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-10-31
 
 ## Context

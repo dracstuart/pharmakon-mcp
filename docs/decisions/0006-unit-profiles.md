@@ -1,6 +1,6 @@
 # 0006. User-configurable unit profiles
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-10-31
 
 ## Context
