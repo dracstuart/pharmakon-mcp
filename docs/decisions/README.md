@@ -20,3 +20,4 @@ Each file records one significant decision: its **context**, the **decision**, a
 | [0009](0009-profiles-are-files.md) | Profiles are files; user interfaces edit them | Accepted |
 | [0010](0010-library-first-front-doors.md) | Library-first architecture with several front doors | Accepted |
 | [0011](0011-modality-scope.md) | Modality scope: structure for synthesized parts, references for expressed parts | Proposed — pending domain review |
+| [0012](0012-source-access-policy.md) | Source access policy: allow and deny lists | Accepted |
