@@ -7,3 +7,7 @@ Versioning: [Semantic Versioning](https://semver.org/); all packages share one v
 ### Added
 - Repository structure, license, contribution guidelines, and architecture decision records.
 - Requirements for the core library (`docs/requirements/`).
+- `pharmakon-core` package skeleton with a `pharmakon --version` command.
+- CI (lint, type checks, tests on Python 3.11–3.14) and Dependabot.
+### Changed
+- Minimum Python version is now 3.11 (ADR 0013).
