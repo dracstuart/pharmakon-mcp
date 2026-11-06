@@ -1,6 +1,6 @@
 # 0001. Python and a uv workspace monorepo
 
-- **Status:** Accepted
+- **Status:** Accepted; Python version superseded by [0013](0013-python-3-11-minimum.md)
 - **Date:** 2026-10-31
 
 ## Context
