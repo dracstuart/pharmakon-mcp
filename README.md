@@ -19,6 +19,7 @@ with the source recorded on every value.
 | `pharmakon-pubchem` | Planned | Identifier resolution; computed and experimental properties |
 | `pharmakon-chembl` | Planned | Drugs, mechanisms, targets, bioactivity, ADC components |
 | `pharmakon-wikidata` | Planned | Identifier cross-references; Wikipedia pharmacokinetics |
+| `pharmakon-comptox` | Planned (later) | Toxicity and exposure data from the EPA CompTox Chemicals Dashboard API (ToxCast, Tox21, hazard); needs a free API key |
 
 Also planned: configurable unit and source-preference profiles, custom data sources
 (CSV, Excel, SQLite), a REST API, and a combined server.
