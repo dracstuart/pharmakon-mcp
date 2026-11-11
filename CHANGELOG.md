@@ -10,6 +10,9 @@ Versioning: [Semantic Versioning](https://semver.org/); all packages share one v
 - EPA CompTox Chemicals Dashboard API added to the roadmap as a planned toxicity data source.
 - `pharmakon-core` package skeleton with a `pharmakon --version` command.
 - CI (lint, type checks, tests on Python 3.11–3.14) and Dependabot.
+- `pharmakon_core.identifiers`: recognize, validate and normalize InChIKey, InChI, SMILES, CAS, PubChem CID, ChEMBL ID, UNII, Wikidata QID, amino acid sequence, HELM, names and custom identifier types. Ambiguous input returns ranked candidates and no single guess.
+- `pharmakon_core.structure`: canonical SMILES, InChI and InChIKey with the optional `rdkit` extra.
+- Dependency on `pydantic` (v2); optional extra `pharmakon-core[rdkit]`.
 ### Changed
 - Minimum Python version is now 3.11 (ADR 0013).
 - Dependabot updates only `uv.lock` for Python dependencies and no longer raises version floors in `pyproject.toml`.
