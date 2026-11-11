@@ -1,0 +1,17 @@
+[project]
+name = "pharmakon-core"
+version = "0.1.0.dev0"
+description = "Shared identifiers, data models, units, profiles and HTTP client for pharmakon"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Andrew Stuart" }]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+pharmakon = "pharmakon_core.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"

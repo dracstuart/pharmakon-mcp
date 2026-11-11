@@ -9,7 +9,7 @@ Each file records one significant decision: its **context**, the **decision**, a
 
 | ADR | Title | Status |
 |---|---|---|
-| [0001](0001-python-uv-monorepo.md) | Python and a uv workspace monorepo | Accepted |
+| [0001](0001-python-uv-monorepo.md) | Python and a uv workspace monorepo | Accepted; Python version superseded by 0013 |
 | [0002](0002-apache-2-license.md) | Apache-2.0 license | Accepted |
 | [0003](0003-identifiers.md) | Identifiers: InChIKey, sequence/HELM, cross-references | Accepted |
 | [0004](0004-provenance-on-every-value.md) | Every value records where it came from | Accepted |
@@ -21,3 +21,4 @@ Each file records one significant decision: its **context**, the **decision**, a
 | [0010](0010-library-first-front-doors.md) | Library-first architecture with several front doors | Accepted |
 | [0011](0011-modality-scope.md) | Modality scope: structure for synthesized parts, references for expressed parts | Proposed — pending domain review |
 | [0012](0012-source-access-policy.md) | Source access policy: allow and deny lists | Accepted |
+| [0013](0013-python-3-11-minimum.md) | Raise the minimum Python version to 3.11 | Accepted |
