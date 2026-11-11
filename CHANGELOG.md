@@ -12,3 +12,4 @@ Versioning: [Semantic Versioning](https://semver.org/); all packages share one v
 - CI (lint, type checks, tests on Python 3.11–3.14) and Dependabot.
 ### Changed
 - Minimum Python version is now 3.11 (ADR 0013).
+- Dependabot updates only `uv.lock` for Python dependencies and no longer raises version floors in `pyproject.toml`.
