@@ -13,5 +13,5 @@ dependencies = []
 pharmakon = "pharmakon_core.cli:main"
 
 [build-system]
-requires = ["hatchling>=1.27"]
+requires = ["hatchling>=1.33.0"]
 build-backend = "hatchling.build"
