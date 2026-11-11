@@ -1,0 +1,433 @@
+{
+  "$defs": {
+    "Citation": {
+      "additionalProperties": false,
+      "description": "The original publication behind a value, when the source names one.",
+      "properties": {
+        "text": {
+          "description": "Citation as given by the source",
+          "minLength": 1,
+          "title": "Text",
+          "type": "string"
+        },
+        "doi": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doi"
+        },
+        "pmid": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Pmid"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "Citation",
+      "type": "object"
+    },
+    "Conditions": {
+      "additionalProperties": false,
+      "description": "Measurement conditions, exactly as reported. Never converted (REQ-CORE-024).",
+      "properties": {
+        "temperature": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "As reported, e.g. '25 °C'",
+          "title": "Temperature"
+        },
+        "ph": {
+          "anyOf": [
+            {
+              "maximum": 14,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ph"
+        },
+        "solvent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Solvent"
+        },
+        "other": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Any other stated condition",
+          "title": "Other",
+          "type": "object"
+        }
+      },
+      "title": "Conditions",
+      "type": "object"
+    },
+    "CrossReference": {
+      "additionalProperties": false,
+      "description": "An identifier for the same entity in another database.",
+      "properties": {
+        "type": {
+          "description": "An IdentifierType value or a custom type name",
+          "minLength": 1,
+          "title": "Type",
+          "type": "string"
+        },
+        "value": {
+          "description": "Normalized identifier",
+          "minLength": 1,
+          "title": "Value",
+          "type": "string"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Database that states this link",
+          "title": "Source"
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "title": "CrossReference",
+      "type": "object"
+    },
+    "PropertyValue": {
+      "additionalProperties": false,
+      "description": "One reported value of one property, with its provenance (REQ-CORE-011, 012).\n\n``value``, ``value_max``, ``qualifier``, ``unit`` and ``text`` hold the value exactly\nas the source reported it. Unit conversions are added alongside, never in place.",
+      "properties": {
+        "property": {
+          "description": "Property name, e.g. 'logp', 'solubility'",
+          "minLength": 1,
+          "title": "Property",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Number as reported",
+          "title": "Value"
+        },
+        "value_max": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Upper end when the source reports a range",
+          "title": "Value Max"
+        },
+        "qualifier": {
+          "anyOf": [
+            {
+              "enum": [
+                "<",
+                "<=",
+                ">",
+                ">=",
+                "~"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "For values like '> 100'",
+          "title": "Qualifier"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Unit as reported; None if unitless",
+          "title": "Unit"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Original wording, e.g. 'freely soluble' or '50-60 °C'",
+          "title": "Text"
+        },
+        "kind": {
+          "$ref": "#/$defs/ValueKind"
+        },
+        "method": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Method or predictor, e.g. 'XLogP3 3.0' or 'shake flask'",
+          "title": "Method"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "citation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Citation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "conditions": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Conditions"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "notes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Notes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "property",
+        "kind",
+        "provenance"
+      ],
+      "title": "PropertyValue",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "description": "Where a value or record came from (ADR 0004).",
+      "properties": {
+        "database": {
+          "description": "Source database, e.g. 'pubchem'",
+          "minLength": 1,
+          "title": "Database",
+          "type": "string"
+        },
+        "record_id": {
+          "description": "Record ID in that database",
+          "minLength": 1,
+          "title": "Record Id",
+          "type": "string"
+        },
+        "url": {
+          "description": "Link to the record; file:// for local files",
+          "format": "uri",
+          "minLength": 1,
+          "title": "Url",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "description": "When the value was retrieved",
+          "format": "date-time",
+          "title": "Retrieved At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "database",
+        "record_id",
+        "url",
+        "retrieved_at"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "ValueKind": {
+      "description": "How a value was obtained.",
+      "enum": [
+        "measured",
+        "computed",
+        "predicted"
+      ],
+      "title": "ValueKind",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A small molecule or peptide: something with a defined structure (REQ-CORE-010).",
+  "properties": {
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Name"
+    },
+    "synonyms": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Synonyms",
+      "type": "array"
+    },
+    "smiles": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Smiles"
+    },
+    "inchi": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Inchi"
+    },
+    "inchikey": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Inchikey"
+    },
+    "sequence": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "One-letter amino acid sequence",
+      "title": "Sequence"
+    },
+    "helm": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Helm"
+    },
+    "xrefs": {
+      "items": {
+        "$ref": "#/$defs/CrossReference"
+      },
+      "title": "Xrefs",
+      "type": "array"
+    },
+    "properties": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PropertyValue"
+      },
+      "title": "Properties"
+    },
+    "provenance": {
+      "description": "Records this molecule was built from",
+      "items": {
+        "$ref": "#/$defs/Provenance"
+      },
+      "title": "Provenance",
+      "type": "array"
+    }
+  },
+  "title": "Molecule",
+  "type": "object"
+}
